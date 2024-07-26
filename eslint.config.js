@@ -15,11 +15,20 @@ export default [
     plugins: {
       'typescript-eslint': tseslint.plugin
     },
+    rules: {
+      'vue/multi-word-component-names': 'error'
+    },
     languageOptions: {
       parserOptions: {
         parser: '@typescript-eslint/parser'
       }
     }
+  },
+  {
+    files: ['app.vue', 'error.vue', 'pages/**/*.vue', 'layouts/**/*.vue'],
+    rules: {
+      'vue/multi-word-component-names': 'off'
+    },
   },
   {
     ignores: ['node_modules', 'dist', 'public', '.nuxt']
