@@ -1,5 +1,6 @@
 export default defineNuxtRouteMiddleware((to, from) => {
   const user = useSupabaseUser();
+  console.log('to', to)
 
   if (user.value || to.params.chapterSlug === "1-chapter-1") {
     return;

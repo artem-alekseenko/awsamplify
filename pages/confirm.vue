@@ -11,6 +11,7 @@ watch(
   () => {
     if (user.value) {
       const to = (query.redirectTo as string) ?? "/";
+      console.log('confirm to', to);
       return navigateTo(to, {
         replace: true,
       });

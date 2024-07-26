@@ -25,6 +25,8 @@ watchEffect(async () => {
 });
 
 const login = async () => {
+  console.log('window.location.origin', window.location.origin);
+  console.log('query.redirectTo', query.redirectTo);
   const redirectTo = `${window.location.origin}${query.redirectTo}`;
   const { error } = await supabase.auth.signInWithOAuth({
     provider: "github",
