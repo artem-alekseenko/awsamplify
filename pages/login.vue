@@ -18,6 +18,7 @@ const user = useSupabaseUser();
 
 watchEffect(async () => {
   if (user.value) {
+    console.log('watch in login.vue', user.value, query.redirectTo);
     await navigateTo(query.redirectTo as string, {
       replace: true,
     });

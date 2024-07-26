@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
   ],
   supabase: {
+    redirect: false,
     redirectOptions: {
       login: "/login",
       callback: "/confirm",
