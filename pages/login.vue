@@ -18,7 +18,6 @@ const user = useSupabaseUser();
 
 watchEffect(async () => {
   if (user.value) {
-    console.log('watch in login.vue', user.value, query.redirectTo);
     await navigateTo(query.redirectTo as string, {
       replace: true,
     });
@@ -26,11 +25,13 @@ watchEffect(async () => {
 });
 
 const login = async () => {
-  console.log("window.location.origin", window.location.origin);
-  console.log("query.redirectTo", query.redirectTo);
-  const redirectTo = `${window.location.origin}${query.redirectTo}`;
+  const queryParams =
+      query.redirectTo !== undefined
+          ? `?redirectTo=${query.redirectTo}`
+          : '';
+  const redirectTo = `${window.location.origin}/confirm${queryParams}`;
   const { error } = await supabase.auth.signInWithOAuth({
-    provider: "github",
+    provider: 'github',
     options: { redirectTo },
   });
 
