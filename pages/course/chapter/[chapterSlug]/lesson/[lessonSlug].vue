@@ -79,6 +79,7 @@ const chapter = computed(() => {
 const title = computed(() => {
   return `${lesson.value.title} - ${course.value.title}`;
 });
+
 useHead({
   title,
 });
