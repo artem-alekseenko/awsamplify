@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/supabase",
     "@nuxt/eslint",
+    "@pinia/nuxt",
   ],
   supabase: {
     redirect: false,
