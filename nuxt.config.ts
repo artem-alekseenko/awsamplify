@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@pinia/nuxt",
   ],
+  nitro: {
+    prerender: {
+      routes: ["/landing"],
+    },
+  },
   supabase: {
     redirect: false,
     redirectOptions: {
