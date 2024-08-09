@@ -32,6 +32,7 @@
 
 <script setup>
 import { useCourseProgress } from "~/stores/courseProgress.ts";
+
 const course = await useCourse();
 const user = useSupabaseUser();
 const route = useRoute();
